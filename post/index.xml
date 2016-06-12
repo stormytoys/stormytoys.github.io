@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Milker Project Log</title>
+    <link>http://stormytoys.github.io/post/</link>
+    <description>Recent content in Posts on Milker Project Log</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 12 Jun 2016 15:07:43 +0100</lastBuildDate>
+    <atom:link href="http://stormytoys.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>start</title>
+      <link>http://stormytoys.github.io/post/start/</link>
+      <pubDate>Sun, 12 Jun 2016 15:07:43 +0100</pubDate>
+      
+      <guid>http://stormytoys.github.io/post/start/</guid>
+      <description>
+
+&lt;h1 id=&#34;start&#34;&gt;Start&lt;/h1&gt;
+
+&lt;p&gt;As the milker will be a project over many weeks decided to create a project log site with the aim of documenting progress and getting the word out there.
+As I make progress on the site I will post updates hopefully on a weekly bases explaining where I am with things. Hopefully this will attract some attention from the community at large, and that hopefully means maybe getting some people on board with specific skills sets.&lt;/p&gt;
+
+&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
+
+&lt;p&gt;For the milker I have decided to go with a vacuum type miler in a similar way of how a cow milking machine works. With one key difference to most DIY machines which is the pulsator will be electronically controlled.
+meaning that the stroke length and speed can be varied on the fly achieving patterns rather than simple speed control. I will also be investigating making the vacuum strength variable by electronic means as well.&lt;/p&gt;
+
+&lt;p&gt;How a this type of machine is best explained with the image shown below:
+&lt;img src=&#34;http://stormytoys.github.io/images/start/inflsc.jpg&#34; alt=&#34;Milker&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;pulsator&#34;&gt;Pulsator&lt;/h2&gt;
+
+&lt;p&gt;For the pulsator I have gone with the following &lt;a href=&#34;http://stormytoys.github.io/images/start/valve.jpg&#34;&gt;Solenoid Valve&lt;/a&gt;. The valve it self is 3 way where I can expose the service end to either vacuum when open or normal air pressure when closed.
+As the valve is electronically controlled I can vary the time between vacuum and normal air pressure through a programmed pattern rather than speed control.&lt;/p&gt;
+
+&lt;h2 id=&#34;control&#34;&gt;Control&lt;/h2&gt;
+
+&lt;p&gt;So for the control going with a predictable Arduino with an avr chip. Although this may change in the future depending on what features I want say Bluetooth lte or wifi.
+For the moment going to be going with the commands sent over serial saved in to the micro controller for execution &lt;a href=&#34;https://www.arduino.cc/en/Tutorial/BlinkWithoutDelay&#34;&gt;without using any delay code&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I do have some code for this however I either have a broken Arduino, Broken usb port on computer or Windows 10 is a bit funny. So going to try it on a alternative computer with linux goodness and get back to you on the code it self.
+In theory the code works well compiles so that is the first hurdle. Next hurdle is debugging fun when its on a MCU.&lt;/p&gt;
+
+&lt;h2 id=&#34;milker-receiver&#34;&gt;Milker Receiver&lt;/h2&gt;
+
+&lt;p&gt;So not decided on what I am doing with this yet. The two options so far are get a serious kit &lt;a href=&#34;http://www.seriouskit.com/&#34;&gt;SPT&lt;/a&gt; or get/build my own.
+I have sent an email to serious kit although got no reply as of this post. Although if I do go with DIY/get one built I would have no issues/guilt on releasing something commercial in the future.
+For the moment I will cross that bridge at a later date as there is a lot more I can be getting on with before that stage.&lt;/p&gt;
+
+&lt;h2 id=&#34;help-which-would-be-nice&#34;&gt;Help which would be nice&lt;/h2&gt;
+
+&lt;p&gt;In short the help I am most likely going to need at the moment is:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Figuring out a way of controlling vacumme strengh electronically. Anyone got any experiance/ideas feel fee to contact me&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Milker Receiver as I not got the means to build a nice one at the moment and would love an aesthetically pleasing receiver.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;However I would certainly expect there are things I havent even thought off.&lt;/p&gt;
+
+&lt;p&gt;My method of contact at the moment is through my &lt;a href=&#34;https://fetlife.com/users/1357083&#34;&gt;profile&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
