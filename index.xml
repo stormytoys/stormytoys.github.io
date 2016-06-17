@@ -6,8 +6,52 @@
     <description>Recent content on Milker Project Log</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 12 Jun 2016 15:07:43 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 17 Jun 2016 19:58:48 +0100</lastBuildDate>
     <atom:link href="http://stormytoys.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Controller</title>
+      <link>http://stormytoys.github.io/post/controller/</link>
+      <pubDate>Fri, 17 Jun 2016 19:58:48 +0100</pubDate>
+      
+      <guid>http://stormytoys.github.io/post/controller/</guid>
+      <description>&lt;p&gt;So while waiting for the power supply and solinoid driver modules decided to make a start on the initial computer controller.
+So for the initial proof of concept decided to go with a arduino uno since I have it on hand. Although for the final version I am considering
+an Arduino 101 since its a bigger micro and had bluetooth low energy built in, or I may go with arm based arduino with a bluetooth low energy module.&lt;/p&gt;
+
+&lt;p&gt;So first of all a video&lt;/p&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//player.vimeo.com/video/171140263&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%;&#34; webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
+ &lt;/div&gt;
+
+
+&lt;p&gt;So the video shows a demo of the control code which is currently driving a LED for demo purposes. At the moment
+during protoype phase a command line is used however for the bluetooth version I am looking in to creating a basic application for a tablet or pc.&lt;/p&gt;
+
+&lt;p&gt;The code is self is &lt;a href=&#34;https://github.com/stormytoys/milker&#34;&gt;on github&lt;/a&gt;. The arduino code is free of using any delay code and instead
+uses millis() on each run and gets the time in millis between the current time and the last time a new command was ran. This gets the time in milliseconds
+which is then checked against the sent command delay time. If the delay time is reached the next command is ran until it gets to the end, then it loops back to the first command.&lt;/p&gt;
+
+&lt;p&gt;The first command sent in the video is &amp;lsquo;I&amp;rsquo; to tell the controller to go in to input mode&lt;/p&gt;
+
+&lt;p&gt;Then folled by the main commands which is:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;C1,10,2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;So the C part is to tell the micro it is a command. The first number is to say if the solenoid should be opened 0 for closed and 1 for opened
+followed by the time delay after the first comma then after the second comma is a value to specify what type of time delay the command has
+which can be 1for milliseconds, 2 for seconds or 3 for minuets&lt;/p&gt;
+
+&lt;p&gt;The final command is &amp;lsquo;F&amp;rsquo; which tells the controller to loop through the pattern.&lt;/p&gt;
+
+&lt;p&gt;Again this is not the final code and I will probably simplify things if I use a micro with more ram where only the milliseconds is sent as the delay.&lt;/p&gt;
+
+&lt;p&gt;So hopefully I can build the first prototype with the solenoid in place and confirm the solenoid is at lest working.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>start</title>

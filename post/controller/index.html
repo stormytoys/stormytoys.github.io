@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  <meta property="og:title" content=" Controller &middot;  Milker Project Log" />
+  
+  <meta property="og:site_name" content="Milker Project Log" />
+  <meta property="og:url" content="http://stormytoys.github.io/post/controller/" />
+  
+  
+  <meta property="og:type" content="article" />
+  
+  <meta property="og:article:published_time" content="2016-06-17T19:58:48&#43;01:00" />
+  
+  
+
+  <title>
+     Controller &middot;  Milker Project Log
+  </title>
+
+  <link rel="stylesheet" href="http://stormytoys.github.io/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="http://stormytoys.github.io/css/main.css" />
+  <link rel="stylesheet" href="http://stormytoys.github.io/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="http://stormytoys.github.io/css/github.css" />
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400" type="text/css">
+  <link rel="shortcut icon" href="http://stormytoys.github.io/images/favicon.ico" />
+  <link rel="apple-touch-icon" href="http://stormytoys.github.io/images/apple-touch-icon.png" />
+  
+</head>
+<body>
+    <header class="global-header"  style="background-image:url( /images/bg.jpg )">
+    <section class="header-text">
+      <h1><a href="http://stormytoys.github.io/">Milker Project Log</a></h1>
+      
+      <div class="tag-line">
+        Project Log for the milker
+      </div>
+      
+      <div class="sns-links hidden-print">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</div>
+
+      
+      <a href="http://stormytoys.github.io/" class="btn-header btn-back hidden-xs">
+        <i class="fa fa-angle-left" aria-hidden="true"></i>
+        &nbsp;Home
+      </a>
+      
+      
+    </section>
+  </header>
+  <main class="container">
+
+
+<article>
+  <header>
+    <h1 class="text-primary">Controller</h1>
+    <div class="post-meta clearfix">
+      <div class="post-date pull-left">
+        Posted on
+        <time datetime="2016-06-17T19:58:48&#43;01:00">
+          Jun 17, 2016
+        </time>
+      </div>
+      <div class="pull-right">
+        
+      </div>
+    </div>
+  </header>
+  <section>
+    <p>So while waiting for the power supply and solinoid driver modules decided to make a start on the initial computer controller.
+So for the initial proof of concept decided to go with a arduino uno since I have it on hand. Although for the final version I am considering
+an Arduino 101 since its a bigger micro and had bluetooth low energy built in, or I may go with arm based arduino with a bluetooth low energy module.</p>
+
+<p>So first of all a video</p>
+
+
+<div style="position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;">
+  <iframe src="//player.vimeo.com/video/171140263" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+ </div>
+
+
+<p>So the video shows a demo of the control code which is currently driving a LED for demo purposes. At the moment
+during protoype phase a command line is used however for the bluetooth version I am looking in to creating a basic application for a tablet or pc.</p>
+
+<p>The code is self is <a href="https://github.com/stormytoys/milker">on github</a>. The arduino code is free of using any delay code and instead
+uses millis() on each run and gets the time in millis between the current time and the last time a new command was ran. This gets the time in milliseconds
+which is then checked against the sent command delay time. If the delay time is reached the next command is ran until it gets to the end, then it loops back to the first command.</p>
+
+<p>The first command sent in the video is &lsquo;I&rsquo; to tell the controller to go in to input mode</p>
+
+<p>Then folled by the main commands which is:</p>
+
+<pre><code>C1,10,2
+</code></pre>
+
+<p>So the C part is to tell the micro it is a command. The first number is to say if the solenoid should be opened 0 for closed and 1 for opened
+followed by the time delay after the first comma then after the second comma is a value to specify what type of time delay the command has
+which can be 1for milliseconds, 2 for seconds or 3 for minuets</p>
+
+<p>The final command is &lsquo;F&rsquo; which tells the controller to loop through the pattern.</p>
+
+<p>Again this is not the final code and I will probably simplify things if I use a micro with more ram where only the milliseconds is sent as the delay.</p>
+
+<p>So hopefully I can build the first prototype with the solenoid in place and confirm the solenoid is at lest working.</p>
+
+  </section>
+  <footer>
+    
+    <section class="author-info row">
+      <div class="author-avatar col-md-2">
+        
+      </div>
+      <div class="author-meta col-md-6">
+        
+        <h1 class="author-name text-primary">Stormy</h1>
+        
+        
+        <div class="author-bio">Just someone whos intrested in building play toys when something can not be found</div>
+        
+      </div>
+      
+    </section>
+    <ul class="pager">
+      
+      <li class="previous"><a href="http://stormytoys.github.io/post/start/"><span aria-hidden="true">&larr;</span> Older</a></li>
+      
+      
+      <li class="next disabled"><a href="#">Newer <span aria-hidden="true">&rarr;</span></a></li>
+      
+    </ul>
+  </footer>
+</article>
+
+  </main>
+  <footer class="container global-footer">
+    <div class="copyright-note pull-left">
+      
+    </div>
+    <div class="sns-links hidden-print">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <script src="http://stormytoys.github.io/js/highlight.pack.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+  </script>
+  
+  
+</body>
+</html>
+
